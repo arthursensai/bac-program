@@ -22,16 +22,17 @@
     }
     .mindmap-title {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 20px;
       color: #333;
+      font-size: 24px;
     }
     .main-node {
       background-color: #FFD966;
       border-radius: 10px;
-      padding: 15px;
+      padding: 12px;
       text-align: center;
-      width: 300px;
-      margin: 0 auto 30px;
+      width: 280px;
+      margin: 0 auto 25px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       font-weight: bold;
       position: relative;
@@ -40,13 +41,13 @@
       display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
-      gap: 20px;
+      gap: 15px;
     }
     .subject {
       background-color: #D9EAD3;
       border-radius: 8px;
-      padding: 10px;
-      width: 200px;
+      padding: 8px;
+      width: 190px;
       text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       position: relative;
@@ -54,30 +55,31 @@
     .subject::before {
       content: '';
       position: absolute;
-      top: -20px;
+      top: -15px;
       left: 50%;
       width: 2px;
-      height: 20px;
+      height: 15px;
       background-color: #666;
     }
     .subject h3 {
       margin-top: 0;
-      margin-bottom: 5px;
-      font-size: 16px;
+      margin-bottom: 3px;
+      font-size: 14px;
     }
     .subject p {
-      font-size: 12px;
+      font-size: 11px;
       margin-top: 0;
+      margin-bottom: 5px;
       color: #555;
     }
     .topics-container {
-      margin-top: 15px;
+      margin-top: 10px;
     }
     .topic {
-      margin: 8px 0;
-      padding: 8px;
+      margin: 5px 0;
+      padding: 5px;
       border-radius: 5px;
-      font-size: 13px;
+      font-size: 11px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
     .math-topic { background-color: #F9CB9C; }
@@ -99,9 +101,54 @@
     }
     
     @media print {
-      body { background-color: white; }
-      .mindmap-container { box-shadow: none; }
-      .print-button { display: none; }
+      /* Print styles */
+      @page {
+        size: A4;
+        margin: 0.5cm;
+      }
+      
+      body {
+        background-color: white;
+        padding: 0;
+        margin: 0;
+      }
+      
+      .mindmap-container {
+        box-shadow: none;
+        padding: 10px;
+        max-width: 100%;
+        width: 100%;
+        page-break-inside: avoid;
+      }
+      
+      .print-button { 
+        display: none; 
+      }
+      
+      .mindmap-title {
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      
+      .main-node {
+        padding: 8px;
+        width: 220px;
+        margin-bottom: 15px;
+      }
+      
+      .subjects-container {
+        gap: 10px;
+      }
+      
+      .subject {
+        padding: 5px;
+        width: 170px;
+      }
+      
+      .topic {
+        margin: 3px 0;
+        padding: 4px;
+      }
     }
   </style>
 </head>
@@ -118,15 +165,15 @@
         <p>(Mathématiques)</p>
         <div class="topics-container">
           <div class="topic math-topic">Limites et Continuité</div>
-          <div class="topic math-topic">Dérivabilité et Étude des Fonctions</div>
+          <div class="topic math-topic">Dérivabilité</div>
           <div class="topic math-topic">Suites Numériques</div>
           <div class="topic math-topic">Fonctions Primitives</div>
-          <div class="topic math-topic">La Fonction Logarithme</div>
-          <div class="topic math-topic">Les Nombres Complexes</div>
+          <div class="topic math-topic">Fonction Logarithme</div>
+          <div class="topic math-topic">Nombres Complexes</div>
           <div class="topic math-topic">Calcul Intégral</div>
           <div class="topic math-topic">Équations Différentielles</div>
           <div class="topic math-topic">Géométrie dans l'Espace</div>
-          <div class="topic math-topic">Dénombrement et Probabilités</div>
+          <div class="topic math-topic">Probabilités</div>
         </div>
       </div>
       
@@ -135,10 +182,10 @@
         <h3>Sciences de la Vie et de la Terre</h3>
         <p>(SVT)</p>
         <div class="topics-container">
-          <div class="topic svt-topic">La Cellule et l'Organisation des Organismes</div>
+          <div class="topic svt-topic">La Cellule</div>
           <div class="topic svt-topic">Génétique et Évolution</div>
           <div class="topic svt-topic">Écologie et Environnement</div>
-          <div class="topic svt-topic">Divers Thèmes Transversaux</div>
+          <div class="topic svt-topic">Thèmes Transversaux</div>
         </div>
       </div>
       
@@ -161,11 +208,11 @@
         <p>(فلسفة - in Arabic)</p>
         <div class="topics-container">
           <div class="topic phi-topic">مقدمة في الفلسفة</div>
-          <div class="topic phi-topic">التيارات الفلسفية الكبرى</div>
-          <div class="topic phi-topic">مفهوم الحقيقة والمعرفة</div>
+          <div class="topic phi-topic">التيارات الفلسفية</div>
+          <div class="topic phi-topic">مفهوم الحقيقة</div>
           <div class="topic phi-topic">الأخلاق والقيم</div>
           <div class="topic phi-topic">الحرية والعدالة</div>
-          <div class="topic phi-topic">تحليل النصوص الفلسفية</div>
+          <div class="topic phi-topic">تحليل النصوص</div>
         </div>
       </div>
       
@@ -176,7 +223,7 @@
         <div class="topics-container">
           <div class="topic eng-topic">Grammar and Vocabulary</div>
           <div class="topic eng-topic">Reading Comprehension</div>
-          <div class="topic eng-topic">Listening and Speaking Skills</div>
+          <div class="topic eng-topic">Listening and Speaking</div>
           <div class="topic eng-topic">Writing Skills</div>
           <div class="topic eng-topic">Exam Preparation</div>
         </div>
