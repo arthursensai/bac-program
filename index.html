@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>2nd Bac Science Physique Mind Map</title>
+  <title>Bac en poche 2025 - Mind Map</title>
   <style>
     body {
       font-family: 'Helvetica', Arial, sans-serif;
       background-color: #f5f5f5;
       margin: 0;
       padding: 20px;
+      -webkit-print-color-adjust: exact !important;
+      color-adjust: exact !important;
+      print-color-adjust: exact !important;
     }
     .mindmap-container {
       width: 100%;
@@ -18,22 +21,32 @@
       background-color: white;
       padding: 20px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      border-radius: 10px;
+      border-radius: 15px;
+    }
+    .top-title {
+      text-align: center;
+      font-size: 28px;
+      font-weight: bold;
+      color: #3f51b5;
+      margin-top: 0;
+      margin-bottom: 15px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
     }
     .mindmap-title {
       text-align: center;
       margin-bottom: 20px;
       color: #333;
-      font-size: 24px;
+      font-size: 22px;
     }
     .main-node {
-      background-color: #FFD966;
-      border-radius: 10px;
+      background: linear-gradient(135deg, #4a6fdc, #8a5feb);
+      color: white;
+      border-radius: 15px;
       padding: 12px;
       text-align: center;
       width: 280px;
       margin: 0 auto 25px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.15);
       font-weight: bold;
       position: relative;
     }
@@ -44,13 +57,14 @@
       gap: 15px;
     }
     .subject {
-      background-color: #D9EAD3;
-      border-radius: 8px;
-      padding: 8px;
+      background-color: #f8f9fa;
+      border-radius: 12px;
+      padding: 12px 8px;
       width: 190px;
       text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 6px rgba(0,0,0,0.1);
       position: relative;
+      border-top: 4px solid;
     }
     .subject::before {
       content: '';
@@ -64,7 +78,11 @@
     .subject h3 {
       margin-top: 0;
       margin-bottom: 3px;
-      font-size: 14px;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
     }
     .subject p {
       font-size: 11px;
@@ -81,23 +99,68 @@
       border-radius: 5px;
       font-size: 11px;
       box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      border-left: 3px solid rgba(0,0,0,0.2);
     }
-    .math-topic { background-color: #F9CB9C; }
-    .svt-topic { background-color: #FCE5CD; }
-    .pc-topic { background-color: #D0E0E3; }
-    .phi-topic { background-color: #EAD1DC; }
-    .eng-topic { background-color: #D9D2E9; }
+    
+    /* Enhanced color scheme */
+    .math-subject { border-color: #5C6BC0; }
+    .svt-subject { border-color: #66BB6A; }
+    .pc-subject { border-color: #26C6DA; }
+    .phi-subject { border-color: #EC407A; }
+    .eng-subject { border-color: #FFA726; }
+    
+    .math-topic { background-color: #E8EAF6; border-color: #5C6BC0; }
+    .svt-topic { background-color: #E8F5E9; border-color: #66BB6A; }
+    .pc-topic { background-color: #E0F7FA; border-color: #26C6DA; }
+    .phi-topic { background-color: #FCE4EC; border-color: #EC407A; }
+    .eng-topic { background-color: #FFF3E0; border-color: #FFA726; }
+    
+    .emoji {
+      font-size: 16px;
+      margin-right: 5px;
+    }
     
     .print-button {
       display: block;
       margin: 20px auto;
       padding: 10px 20px;
-      background-color: #4285F4;
+      background: linear-gradient(135deg, #4a6fdc, #8a5feb);
       color: white;
       border: none;
-      border-radius: 5px;
+      border-radius: 30px;
       cursor: pointer;
       font-size: 16px;
+      font-weight: bold;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: all 0.2s ease;
+    }
+    
+    .print-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    
+    .print-instructions {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 15px;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      font-size: 14px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    
+    .print-instructions h3 {
+      margin-top: 0;
+      color: #3f51b5;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .print-instructions li {
+      margin-bottom: 8px;
     }
     
     @media print {
@@ -111,6 +174,9 @@
         background-color: white;
         padding: 0;
         margin: 0;
+        -webkit-print-color-adjust: exact !important;
+        color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
       
       .mindmap-container {
@@ -121,12 +187,17 @@
         page-break-inside: avoid;
       }
       
-      .print-button { 
+      .print-button, .print-instructions { 
         display: none; 
       }
       
+      .top-title {
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+      
       .mindmap-title {
-        font-size: 20px;
+        font-size: 18px;
         margin-bottom: 15px;
       }
       
@@ -154,14 +225,15 @@
 </head>
 <body>
   <div class="mindmap-container">
-    <h1 class="mindmap-title">2nd Bac Science Physique Mind Map</h1>
+    <h1 class="top-title">🎓 Bac en poche 2025 🎓</h1>
+    <h2 class="mindmap-title">2nd Bac Science Physique - Programme Complet</h2>
     
-    <div class="main-node">2nd Bac Science Physique Program</div>
+    <div class="main-node">📚 2nd Bac Science Physique</div>
     
     <div class="subjects-container">
       <!-- Mathematics -->
-      <div class="subject">
-        <h3>Mathematics</h3>
+      <div class="subject math-subject">
+        <h3>🧮 Mathematics</h3>
         <p>(Mathématiques)</p>
         <div class="topics-container">
           <div class="topic math-topic">Limites et Continuité</div>
@@ -178,8 +250,8 @@
       </div>
       
       <!-- SVT -->
-      <div class="subject">
-        <h3>Sciences de la Vie et de la Terre</h3>
+      <div class="subject svt-subject">
+        <h3>🌱 Sciences de la Vie et de la Terre</h3>
         <p>(SVT)</p>
         <div class="topics-container">
           <div class="topic svt-topic">La Cellule</div>
@@ -190,8 +262,8 @@
       </div>
       
       <!-- Physique-Chimie -->
-      <div class="subject">
-        <h3>Physique-Chimie</h3>
+      <div class="subject pc-subject">
+        <h3>⚗️ Physique-Chimie</h3>
         <div class="topics-container">
           <div class="topic pc-topic">Mécanique</div>
           <div class="topic pc-topic">Électromagnétisme</div>
@@ -203,8 +275,8 @@
       </div>
       
       <!-- Philosophy -->
-      <div class="subject">
-        <h3>Philosophy</h3>
+      <div class="subject phi-subject">
+        <h3>🧠 Philosophy</h3>
         <p>(فلسفة - in Arabic)</p>
         <div class="topics-container">
           <div class="topic phi-topic">مقدمة في الفلسفة</div>
@@ -217,8 +289,8 @@
       </div>
       
       <!-- English -->
-      <div class="subject">
-        <h3>English</h3>
+      <div class="subject eng-subject">
+        <h3>🌍 English</h3>
         <p>(in English)</p>
         <div class="topics-container">
           <div class="topic eng-topic">Grammar and Vocabulary</div>
@@ -230,13 +302,24 @@
       </div>
     </div>
     
-    <button class="print-button" onclick="window.print()">Save as PDF</button>
+    <div class="print-instructions">
+      <h3>🖨️ How to print with colors:</h3>
+      <ol>
+        <li>Click the "Save as PDF" button below</li>
+        <li>In the print dialog, select "Save as PDF" as the destination</li>
+        <li>Click on "More settings" or "Advanced"</li>
+        <li>Check "Background graphics" or "Print backgrounds" option</li>
+        <li>Click "Save" or "Print" to create your PDF with colors</li>
+      </ol>
+    </div>
+    
+    <button class="print-button" onclick="window.print()">📄 Save as PDF</button>
   </div>
   
   <script>
-    // Add this script to make "Print to PDF" more obvious
+    // Optional reminder about printing with colors
     document.querySelector('.print-button').addEventListener('click', function() {
-      alert("To save as PDF: In the print dialog, select 'Save as PDF' option in the destination/printer dropdown.");
+      alert("Remember to enable 'Background graphics' or 'Print backgrounds' in your print settings to include colors!");
     });
   </script>
 </body>
