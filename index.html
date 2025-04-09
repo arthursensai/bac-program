@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2nd Bac Science Physique Mind Map</title>
+  <style>
+    body {
+      font-family: 'Helvetica', Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    .mindmap-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 10px;
+    }
+    .mindmap-title {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    .main-node {
+      background-color: #FFD966;
+      border-radius: 10px;
+      padding: 15px;
+      text-align: center;
+      width: 300px;
+      margin: 0 auto 30px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      font-weight: bold;
+      position: relative;
+    }
+    .subjects-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .subject {
+      background-color: #D9EAD3;
+      border-radius: 8px;
+      padding: 10px;
+      width: 200px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .subject::before {
+      content: '';
+      position: absolute;
+      top: -20px;
+      left: 50%;
+      width: 2px;
+      height: 20px;
+      background-color: #666;
+    }
+    .subject h3 {
+      margin-top: 0;
+      margin-bottom: 5px;
+      font-size: 16px;
+    }
+    .subject p {
+      font-size: 12px;
+      margin-top: 0;
+      color: #555;
+    }
+    .topics-container {
+      margin-top: 15px;
+    }
+    .topic {
+      margin: 8px 0;
+      padding: 8px;
+      border-radius: 5px;
+      font-size: 13px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .math-topic { background-color: #F9CB9C; }
+    .svt-topic { background-color: #FCE5CD; }
+    .pc-topic { background-color: #D0E0E3; }
+    .phi-topic { background-color: #EAD1DC; }
+    .eng-topic { background-color: #D9D2E9; }
+    
+    .print-button {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: #4285F4;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    
+    @media print {
+      body { background-color: white; }
+      .mindmap-container { box-shadow: none; }
+      .print-button { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="mindmap-container">
+    <h1 class="mindmap-title">2nd Bac Science Physique Mind Map</h1>
+    
+    <div class="main-node">2nd Bac Science Physique Program</div>
+    
+    <div class="subjects-container">
+      <!-- Mathematics -->
+      <div class="subject">
+        <h3>Mathematics</h3>
+        <p>(Mathématiques)</p>
+        <div class="topics-container">
+          <div class="topic math-topic">Limites et Continuité</div>
+          <div class="topic math-topic">Dérivabilité et Étude des Fonctions</div>
+          <div class="topic math-topic">Suites Numériques</div>
+          <div class="topic math-topic">Fonctions Primitives</div>
+          <div class="topic math-topic">La Fonction Logarithme</div>
+          <div class="topic math-topic">Les Nombres Complexes</div>
+          <div class="topic math-topic">Calcul Intégral</div>
+          <div class="topic math-topic">Équations Différentielles</div>
+          <div class="topic math-topic">Géométrie dans l'Espace</div>
+          <div class="topic math-topic">Dénombrement et Probabilités</div>
+        </div>
+      </div>
+      
+      <!-- SVT -->
+      <div class="subject">
+        <h3>Sciences de la Vie et de la Terre</h3>
+        <p>(SVT)</p>
+        <div class="topics-container">
+          <div class="topic svt-topic">La Cellule et l'Organisation des Organismes</div>
+          <div class="topic svt-topic">Génétique et Évolution</div>
+          <div class="topic svt-topic">Écologie et Environnement</div>
+          <div class="topic svt-topic">Divers Thèmes Transversaux</div>
+        </div>
+      </div>
+      
+      <!-- Physique-Chimie -->
+      <div class="subject">
+        <h3>Physique-Chimie</h3>
+        <div class="topics-container">
+          <div class="topic pc-topic">Mécanique</div>
+          <div class="topic pc-topic">Électromagnétisme</div>
+          <div class="topic pc-topic">Thermodynamique</div>
+          <div class="topic pc-topic">Optique</div>
+          <div class="topic pc-topic">Ondes et Vibrations</div>
+          <div class="topic pc-topic">Structure de la Matière</div>
+        </div>
+      </div>
+      
+      <!-- Philosophy -->
+      <div class="subject">
+        <h3>Philosophy</h3>
+        <p>(فلسفة - in Arabic)</p>
+        <div class="topics-container">
+          <div class="topic phi-topic">مقدمة في الفلسفة</div>
+          <div class="topic phi-topic">التيارات الفلسفية الكبرى</div>
+          <div class="topic phi-topic">مفهوم الحقيقة والمعرفة</div>
+          <div class="topic phi-topic">الأخلاق والقيم</div>
+          <div class="topic phi-topic">الحرية والعدالة</div>
+          <div class="topic phi-topic">تحليل النصوص الفلسفية</div>
+        </div>
+      </div>
+      
+      <!-- English -->
+      <div class="subject">
+        <h3>English</h3>
+        <p>(in English)</p>
+        <div class="topics-container">
+          <div class="topic eng-topic">Grammar and Vocabulary</div>
+          <div class="topic eng-topic">Reading Comprehension</div>
+          <div class="topic eng-topic">Listening and Speaking Skills</div>
+          <div class="topic eng-topic">Writing Skills</div>
+          <div class="topic eng-topic">Exam Preparation</div>
+        </div>
+      </div>
+    </div>
+    
+    <button class="print-button" onclick="window.print()">Save as PDF</button>
+  </div>
+  
+  <script>
+    // Add this script to make "Print to PDF" more obvious
+    document.querySelector('.print-button').addEventListener('click', function() {
+      alert("To save as PDF: In the print dialog, select 'Save as PDF' option in the destination/printer dropdown.");
+    });
+  </script>
+</body>
+</html>
